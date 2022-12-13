@@ -17,7 +17,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'glific', // Usually your GitHub org/user name.
-  projectName: 'glific', 
+  projectName: 'docs', 
   deploymentBranch: 'gh-pages',
   plugins: [[
     require.resolve('@cmfcmf/docusaurus-search-local'), {indexDocs: true},
