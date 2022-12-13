@@ -1,2 +1,2 @@
-# docs
+# Docs
 All the glific docs. 
