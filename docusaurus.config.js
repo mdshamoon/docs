@@ -42,7 +42,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/glific/docs/tree/main/docs/Glific%20Documentation',
+            'https://github.com/glific/docs/tree/main',
         },
         blog: {
           showReadingTime: true,
