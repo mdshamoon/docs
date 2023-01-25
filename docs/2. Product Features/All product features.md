@@ -2,7 +2,7 @@
 
 At the most basic level you can send and receive messages to your user community.
 
-## [Rich media attachments]()  
+## [Rich media attachments](#)  
 
 You can use stickers, images, videos(youtube link or attached in message), document, audio. You would need to host the media files on platforms like Google Cloud Storage and then provide link as an attachment on Glific.
 
