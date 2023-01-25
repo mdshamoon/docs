@@ -1,8 +1,8 @@
-## [Send and receive messages](https://01. Getting started with communication in Glific)
+## [Send and receive messages](#)
 
 At the most basic level you can send and receive messages to your user community.
 
-## [Rich media attachments](https://03. Send media files in messages)  
+## [Rich media attachments]()  
 
 You can use stickers, images, videos(youtube link or attached in message), document, audio. You would need to host the media files on platforms like Google Cloud Storage and then provide link as an attachment on Glific.
 
@@ -10,7 +10,7 @@ You can use stickers, images, videos(youtube link or attached in message), docum
 
 You can upload an audio file on GCS and add the link in a message or you can also directly record the message from the Glific chat interface and send to the users.
 
-## [Multiple languages](https://01. Configuring flows in different languages)
+## [Multiple languages](#)
 
 You can enable different regional languages and plan the message content to support those languages. See More
 
