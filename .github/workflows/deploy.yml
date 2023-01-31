@@ -24,7 +24,7 @@ jobs:
         env:
           ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
           ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
-          ALGOLIA_INDEX_NAME: ${{ ecrets.ALGOLIA_INDEX_NAME }}
+          ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
         run: yarn build
 
       # Popular action to deploy to GitHub Pages:
