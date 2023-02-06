@@ -9,7 +9,7 @@ B . Connect 10 data sources to your BigQuery Account
 
 1. Connect `contacts`, `messages`, and `message conversations` through 'My Projects'
 2. Connect `flat fields`, `monthly active users`, `Contact collections`, `success messages` and `flow context` by replacing your Dataset ID into the preset 'Custom Query'.
-3. Connect `flow Results` and `Contact Collection` by running a query in BigQuery before connecting the data sources.
+3. Connect `flow Results` and `Contact Collection` by running a query for each in BigQuery before connecting the data sources.
 
 3 . Your reports will be ready.
 
