@@ -13,7 +13,7 @@ B . Connect 10 data sources to your BigQuery Account
 
 3 . Your reports will be ready.
 
-Implementation Time: 60 minutes
+**Implementation Time**: 60 minutes
 
 **Below are the detailed steps with screenshots to integrate Data studio.**
 ___
