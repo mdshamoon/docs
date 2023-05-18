@@ -1,0 +1,181 @@
+{
+  "interactive_templates": [],
+  "flows": [
+    {
+      "keywords": ["wsheet"],
+      "definition": {
+        "vars": ["b4feecff-088a-42fa-91b2-161a9c181947"],
+        "uuid": "b4feecff-088a-42fa-91b2-161a9c181947",
+        "type": "messaging",
+        "spec_version": "13.2.0",
+        "nodes": [
+          {
+            "uuid": "6a6e1889-3aa5-4945-ae36-9606c8cc5e0a",
+            "exits": [
+              {
+                "uuid": "70624687-43b4-46d0-bff4-cab46c05d197",
+                "destination_uuid": "24b6118b-a259-4000-9484-97bed87a2407"
+              }
+            ],
+            "actions": [
+              {
+                "uuid": "b90d1383-db8d-4342-9ecb-a7173c5f5ef3",
+                "type": "send_msg",
+                "text": "Enter text for sheet",
+                "quick_replies": [],
+                "labels": [],
+                "attachments": []
+              }
+            ]
+          },
+          {
+            "uuid": "24b6118b-a259-4000-9484-97bed87a2407",
+            "router": {
+              "wait": { "type": "msg" },
+              "type": "switch",
+              "result_name": "input",
+              "operand": "@input.text",
+              "default_category_uuid": "8d61e009-3bee-4dc9-a0c1-7c7a1cf2f6aa",
+              "categories": [
+                {
+                  "uuid": "8d61e009-3bee-4dc9-a0c1-7c7a1cf2f6aa",
+                  "name": "All Responses",
+                  "exit_uuid": "1f7d8ba9-4428-4405-a55a-b3dff4784e8c"
+                }
+              ],
+              "cases": []
+            },
+            "exits": [
+              {
+                "uuid": "1f7d8ba9-4428-4405-a55a-b3dff4784e8c",
+                "destination_uuid": "f2789ee8-77a1-495b-bd45-1879c10e913c"
+              }
+            ],
+            "actions": []
+          },
+          {
+            "uuid": "f2789ee8-77a1-495b-bd45-1879c10e913c",
+            "router": {
+              "type": "switch",
+              "operand": "@results..category",
+              "default_category_uuid": "9ea561f9-98d2-4582-b7f0-b3808fc81701",
+              "categories": [
+                {
+                  "uuid": "9de49a45-ea63-4fc2-a0e7-b8190ef1253d",
+                  "name": "Success",
+                  "exit_uuid": "8f2ad980-eaa3-45a8-806f-2c6f1999f349"
+                },
+                {
+                  "uuid": "9ea561f9-98d2-4582-b7f0-b3808fc81701",
+                  "name": "Failure",
+                  "exit_uuid": "c1f78134-ecbd-4159-85d7-0695dff02dcd"
+                }
+              ],
+              "cases": [
+                {
+                  "uuid": "e444bfca-2467-43fd-aa81-d168ff468491",
+                  "type": "has_only_text",
+                  "category_uuid": "9de49a45-ea63-4fc2-a0e7-b8190ef1253d",
+                  "arguments": ["Success"]
+                }
+              ]
+            },
+            "exits": [
+              {
+                "uuid": "8f2ad980-eaa3-45a8-806f-2c6f1999f349",
+                "destination_uuid": "68f30533-90eb-4684-9727-b1f067b79a17"
+              },
+              {
+                "uuid": "c1f78134-ecbd-4159-85d7-0695dff02dcd",
+                "destination_uuid": "a46d1bfd-11fc-400a-977d-94bac62e3a2c"
+              }
+            ],
+            "actions": [
+              {
+                "uuid": "6b93e89f-ab54-47dc-a313-09f064df0dd1",
+                "url": "https://docs.google.com/spreadsheets/d/1x6lPyPccBq_VnZFXVUrQXWfuELPMUH3VLijbYL0cRKw/edit#gid=0",
+                "type": "link_google_sheet",
+                "sheet_id": 114,
+                "row_data": ["@contact.name", "@results.input"],
+                "result_name": "",
+                "range": "Sheet1!A:Z",
+                "name": "Writable",
+                "action_type": "WRITE"
+              }
+            ]
+          },
+          {
+            "uuid": "68f30533-90eb-4684-9727-b1f067b79a17",
+            "exits": [
+              {
+                "uuid": "5f1f6d61-5f3d-464d-933d-efccdbd1a97c",
+                "destination_uuid": null
+              }
+            ],
+            "actions": [
+              {
+                "uuid": "b6f082e9-1188-4499-8cbf-ec96df0b8be0",
+                "type": "send_msg",
+                "text": "Successfully inserted to Sheet",
+                "quick_replies": [],
+                "labels": [],
+                "attachments": []
+              }
+            ]
+          },
+          {
+            "uuid": "a46d1bfd-11fc-400a-977d-94bac62e3a2c",
+            "exits": [
+              {
+                "uuid": "cad94a16-7c5d-4a02-a3bb-ea84044d2397",
+                "destination_uuid": null
+              }
+            ],
+            "actions": [
+              {
+                "uuid": "b6fdfecc-dcc3-41be-b654-81db8f39295f",
+                "type": "send_msg",
+                "text": "Failed",
+                "quick_replies": [],
+                "labels": [],
+                "attachments": []
+              }
+            ]
+          }
+        ],
+        "name": "write sheet",
+        "localization": {},
+        "language": "base",
+        "expire_after_minutes": 10080,
+        "_ui": {
+          "nodes": {
+            "f2789ee8-77a1-495b-bd45-1879c10e913c": {
+              "type": "split_by_webhook",
+              "position": { "top": 360, "left": 500 },
+              "config": {}
+            },
+            "a46d1bfd-11fc-400a-977d-94bac62e3a2c": {
+              "type": "execute_actions",
+              "position": { "top": 540, "left": 700 }
+            },
+            "6a6e1889-3aa5-4945-ae36-9606c8cc5e0a": {
+              "type": "execute_actions",
+              "position": { "top": 100, "left": 40 }
+            },
+            "68f30533-90eb-4684-9727-b1f067b79a17": {
+              "type": "execute_actions",
+              "position": { "top": 540, "left": 220 }
+            },
+            "24b6118b-a259-4000-9484-97bed87a2407": {
+              "type": "wait_for_response",
+              "position": { "top": 180, "left": 500 },
+              "config": { "cases": {} }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "contact_field": [],
+  "collections": []
+}
