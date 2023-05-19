@@ -45,6 +45,7 @@ How to get a support on chat
             4) Date and time when issue received -
             5) Steps to replicate it
             6) Screen shot of the GLific application where issue/ error is thrown
+<img width="1103" alt="Screenshot 2023-05-19 at 6 52 33 PM" src="https://github.com/glific/docs/assets/16541548/78de4e01-a86e-4e1a-8c0e-8e5159598cf1">
 
 #3. Want to speck to support team for any assistance
 1. Every Thruday we have Support hour call at 3:30 PM, where any one can join and ask their queries. We have this for once is a week for now. 
