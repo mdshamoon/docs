@@ -2,7 +2,7 @@ If you have a query or you facing any issue while using Glific. Please don't wai
 
 Steps to follow to take support.
 
-#1 .  Glific Doucmentation
+*#1 .  Glific Doucmentation*
       1. From the left navigation click on help link.
       2. It will open a documentation link http://docs.glific.org/
       3. From right top corner click on the search box
@@ -20,7 +20,7 @@ Steps to follow to take support.
 The documents has all features and possible queries covered anf you will get your answers most of the time. 
 But in case you didnt find the soluction of your queries, then you can connect to Glific Support team.
 
-#2. Glific provides 24 X 7 Chat support on Glific Discord channel
+*#2. Glific provides 24 X 7 Chat support on Glific Discord channel*
 Note: - Monday to Friady - Glific team is super active on Discord channel and reposne almost immediately you post your query.
 on weekend - Satuday and Suday - You can expect a reposne within 2 to 8 hours.
 
@@ -47,11 +47,11 @@ How to get a support on chat
             6) Screen shot of the GLific application where issue/ error is thrown
 <img width="1103" alt="Screenshot 2023-05-19 at 6 52 33 PM" src="https://github.com/glific/docs/assets/16541548/78de4e01-a86e-4e1a-8c0e-8e5159598cf1">
 
-#3. Want to speck to support team for any assistance
+*#3. Want to speck to support team for any assistance*
 1. Every Thruday we have Support hour call at 3:30 PM, where any one can join and ask their queries. We have this for once is a week for now. 
 If we will have more requriement, we can start doing in twice in a week.
 
 Meeting details are share below.
-Google meet Link: = https://meet.google.com/kyv-ymhs-kmu
-Daye = Every Thrisay
-Time = 3:30 PM
+- Google meet Link: = https://meet.google.com/kyv-ymhs-kmu
+- Daye = Every Thursday
+- Time = 3:30 PM IST
