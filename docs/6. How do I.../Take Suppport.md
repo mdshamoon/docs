@@ -28,7 +28,9 @@ How to get a support on chat
 1. Join the GLific Discord Channel.
 2. Post your query
 
-1. 
+1. Join GLific Discord Channel.
+      1. Click on the link - https://discord.com/invite/g6VNUBUCTq
+
 
 #3. Want to speck to support team for any assistance
 1. Every Thruday we have Support hour call at 3:30 PM, where any one can join and ask their queries. We have this for once is a week for now. 
