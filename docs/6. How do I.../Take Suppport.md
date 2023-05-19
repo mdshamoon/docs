@@ -30,7 +30,21 @@ How to get a support on chat
 
 1. Join GLific Discord Channel.
       1. Click on the link - https://discord.com/invite/g6VNUBUCTq
+      2. Enter your personal email (it should not be your org email) /phone number to create account.
+      3. Once logged in. click on NGO Support channel https://discord.com/channels/717975833226248303/1037981805653008404
+      <img width="326" alt="Screenshot 2023-05-19 at 6 41 48 PM" src="https://github.com/glific/docs/assets/16541548/8b6e6f2d-5beb-434b-b8f9-cc1e0e85fe84">
+      
+      4. Click on New Porst button
+      5. Enter the title of the request with your Orgname . For example - Not able to login - NGO Name
+            <img width="1401" alt="Screenshot 2023-05-19 at 6 44 50 PM" src="https://github.com/glific/docs/assets/16541548/80ac5bb1-65d6-44de-bfd4-a3681022e58b">
 
+      7. Enter the description of the request or issue in "enter the message seciotn". Please share below details to get fast response.
+            1) Your Glific application URL -
+            2) Flow Name -
+            3) Contact Nmae and Phone Number who faced issue -
+            4) Date and time when issue received -
+            5) Steps to replicate it
+            6) Screen shot of the GLific application where issue/ error is thrown
 
 #3. Want to speck to support team for any assistance
 1. Every Thruday we have Support hour call at 3:30 PM, where any one can join and ask their queries. We have this for once is a week for now. 
