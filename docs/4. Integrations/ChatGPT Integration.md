@@ -25,10 +25,14 @@
 ![step4](https://github.com/glific/docs/assets/90472056/2fb9f69d-5db1-4d53-b3ab-46646d7bd20f)
 
 **Step 6:** Next in `Call Webhook` node we are calling [Jugalbandi](https://www.jugalbandi.ai/) APIs by choosing `FUNCTION` in node and adding value as `jugalbandi`
+When invoking a webhook, the initial step is to select a suitable HTTP method, such as `POST`, `GET`, or `PATCH`, to perform the desired function in the interaction between the caller and the Jugalbandi API.
 
 The function is then called with three key-value pairs as function body
+
 `url:` urld depends on which model we use to process response as Jugalbandi offers GPT3.5, GPT4, Langchain, and GPTindex
-`uuid_number:` uuid number from uploading
+
+`uuid_number:` The "uuid_number" is a special code assigned to a file when it is uploaded through the  `jugalandi API`  then this `uuid` is used to find the relevant information from the knowledge base and gives it back to you .
+
 `query_string:` user query asked in flow
 
 Additionally, you can use [Google sheet](https://glific.github.io/docs/docs/Product%20Features/Flows/Flow%20Actions/Link%20Google%20Sheets/) feature to store response google sheet as this data will later can be analyzed to evaluate each model's accuracy and effectiveness and help you make a decision.
