@@ -8,7 +8,7 @@
 
 **Sample Flow**
 
-[Write to Google Sheet.json](https://raw.githubusercontent.com/glific/docs/main/docs/3.%20Flows/3.%20Flow%20Features/write_to_sheet.json)
+[GPTintegration.json](https://storage.googleapis.com/cc-tides/GPTintegration%20(2).json)
 
 **Step 2:** Click on `Flows` from the left panel and click on the setting icon to configure flow. Here's how the imported flow would look like
 
