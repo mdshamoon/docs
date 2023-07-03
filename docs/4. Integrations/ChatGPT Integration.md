@@ -26,7 +26,7 @@
 
 **Step 6:** Next in `Call Webhook` node we are calling [Jugalbandi](https://www.jugalbandi.ai/) APIs by choosing `FUNCTION` in node and adding value as `jugalbandi.`
 
-![image](https://user-images.githubusercontent.com/32592458/212661350-bf2ce325-4fbf-4882-b947-10f7eb660f3f.png)
+<img width="1100" alt="webhook" src="https://user-images.githubusercontent.com/32592458/212661350-bf2ce325-4fbf-4882-b947-10f7eb660f3f.png">
 
 When invoking a webhook, the initial step is to select a suitable HTTP method, such as `POST`, `GET`, or `PATCH`, to perform the desired function in the interaction between the caller and the Jugalbandi API.
 
