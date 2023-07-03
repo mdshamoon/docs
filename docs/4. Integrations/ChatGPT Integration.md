@@ -32,6 +32,8 @@ When invoking a webhook, the initial step is to select a suitable HTTP method, s
 
 The function is then called with three key-value pairs as the function body
 
+![image](https://github.com/glific/docs/assets/40158831/7f509016-f7fd-43c8-83c1-b133dd95a7dc)
+
 `url:` URL depends on which model we use to process the response as Jugalbandi offers 
 
 1. GPT3.5: `https://api.jugalbandi.ai/query-with-langchain-gpt3-5`
