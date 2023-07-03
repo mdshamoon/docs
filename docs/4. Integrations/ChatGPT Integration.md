@@ -12,21 +12,21 @@
 
 **Step 2:** Click on `Flows` from the left panel and click on the setting icon to configure the imported flow. Here's how the imported flow would look like
 
-<img width="1100" alt="GPTflow" src="https://github.com/glific/docs/assets/40158831/3b73c25e-3bb3-44f4-9b8b-2fce8760a7cf">
+![image](https://github.com/glific/docs/assets/40158831/3b73c25e-3bb3-44f4-9b8b-2fce8760a7cf)
 
 **Step 3:** The first node is the `Send Message` node, which prompts the contact to ask question which will then be sent to ChatGPT using `Call Webhook` in `Step 6`
 
 **Step 4:** The second node is the `Wait for Response` node with the result name `gpt_query`. The response from the contact will be saved in this result and can be referenced as `@results.gpt_query`.
 
-<img width="1100" alt="waitforresponse" src="https://github.com/glific/docs/assets/40158831/a91c2a31-55b7-4fea-a8f5-ffd8a914f942">
+![image](https://github.com/glific/docs/assets/40158831/a91c2a31-55b7-4fea-a8f5-ffd8a914f942)
 
 **Step 5:** The third node is the `Send Message` which we are sending to contact while we are sending user query to ChatGPT and waiting for the response.
 
-<img width="1100" alt="webhook" src="https://github.com/glific/docs/assets/40158831/0da1319e-6a62-4dc1-a523-63fcd63304fe">
+![image](https://github.com/glific/docs/assets/40158831/0da1319e-6a62-4dc1-a523-63fcd63304fe)
 
 **Step 6:** Next in the `Call Webhook` node we are calling [Jugalbandi](https://www.jugalbandi.ai/) APIs by choosing `FUNCTION` in the node and adding value as `jugalbandi`
 
-<img width="1100" alt="webhook" src="https://github.com/glific/docs/assets/40158831/6dd12db6-3e08-4569-854b-1ae6acf22c2f">
+![image](https://github.com/glific/docs/assets/40158831/6dd12db6-3e08-4569-854b-1ae6acf22c2f)
 
 When invoking a webhook, the initial step is to select a suitable HTTP method, such as `POST`, `GET`, or `PATCH`, to perform the desired function in the interaction between the caller and the Jugalbandi API.
 
