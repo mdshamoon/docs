@@ -31,7 +31,7 @@ The function is then called with three key-value pairs as function body
 `uuid_number:` uuid number from uploading
 `query_string:` user query asked in flow
 
-Additionally, you can use [Google sheet](https://glific.github.io/docs/docs/Product%20Features/Flows/Flow%20Actions/Link%20Google%20Sheets/) feature to store response as this data will later can be analyzed to evaluate each model's accuracy and effectiveness and help you make a decision.
+Additionally, you can use [Google sheet](https://glific.github.io/docs/docs/Product%20Features/Flows/Flow%20Actions/Link%20Google%20Sheets/) feature to store response google sheet as this data will later can be analyzed to evaluate each model's accuracy and effectiveness and help you make a decision.
 
 Using the [webhook logs](https://cc.tides.coloredcow.com/webhook-logs), you can view the logs of questions asked and responses received by ChatGPT.
 
