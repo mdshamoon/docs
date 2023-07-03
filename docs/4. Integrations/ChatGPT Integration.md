@@ -25,6 +25,9 @@
 ![step4](https://github.com/glific/docs/assets/90472056/2fb9f69d-5db1-4d53-b3ab-46646d7bd20f)
 
 **Step 6:** Next in `Call Webhook` node we are calling [Jugalbandi](https://www.jugalbandi.ai/) APIs by choosing `FUNCTION` in node and adding value as `jugalbandi.`
+
+![image](https://user-images.githubusercontent.com/32592458/212661350-bf2ce325-4fbf-4882-b947-10f7eb660f3f.png)
+
 When invoking a webhook, the initial step is to select a suitable HTTP method, such as `POST`, `GET`, or `PATCH`, to perform the desired function in the interaction between the caller and the Jugalbandi API.
 
 The function is then called with three key-value pairs as function body
