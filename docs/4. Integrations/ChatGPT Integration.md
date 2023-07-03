@@ -31,7 +31,7 @@ The function is then called with three key-value pairs as function body
 
 `url:` urld depends on which model we use to process response as Jugalbandi offers GPT3.5, GPT4, Langchain, and GPTindex
 
-`uuid_number:` The "uuid_number" is a special code assigned to a file when it is uploaded through the  `jugalbandi API`  then this `uuid` is used to find the relevant information from the knowledge base and gives it back to you .
+`uuid_number:` The "uuid_number" is a special code assigned to a file when it is uploaded through the  [jugalbandi API](https://api.jugalbandi.ai/docs)  then this `uuid` is used to find the relevant information from the knowledge base and gives it back to you .
 
 `query_string:` user query asked in flow
 
