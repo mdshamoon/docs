@@ -1,66 +1,67 @@
 > ### **3 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Advanced`**
 ___
 
-**Support tickets streamline the process of submitting queries and assigning team members.They provide a convenient system for organizing and managing inquiries in a more efficient way.**
+**Support tickets streamline the process of submitting queries and assigning staff members for each query. This provides a convenient system for organizing and managing inquiries in a more efficient way.**
 
 ___
 ## Sample Use Case
 
-Please have a look at the steps to use support tickets in Glific.
+ 1. Here's a sample flow with minimal configuration for using the ticketing system in Glific
 
- 1. Click on `Flows` from the left panel and click on the setting icon to configure the imported flow. Here's how the imported flow would look like
-
-![flow](https://github.com/glific/docs/assets/90472056/3dfde34e-cf63-41b2-b3bf-68629cb9bc92)
+![flow](https://github.com/glific/docs/assets/40158831/defba88d-21d3-414a-822c-0eed3754fe18)
 
 ___
 
-2. Receive the response from a contact in a variable.
+2. The first node is the `Send Message` node, which prompts the contact to share his query so a new ticket can be opened
 
-![picture](https://github.com/glific/docs/assets/90472056/6f2c5258-4d12-4d03-a79e-3b59b19ce4c3)
+![picture](https://github.com/glific/docs/assets/40158831/8d3f96c5-ad08-4981-9441-b1f1f9d31807)
+
+3. The second node is the `Wait for Response` node with the result name `ticket`. The response from the contact will be saved in this result and can be referenced as `@results.ticket`.
+
+![picture](https://github.com/glific/docs/assets/40158831/87c193c2-477e-42a6-a6a0-aaf2c6739621)
 
 ___
 
-The ticket will be saved in the result and can reference it later using `@results.ticket`
-
-3. Open ticket in a node.
-    1. Choose to `Open a ticket with a human agent` in the dropdown in node action.
-    1. There we can add the labels like `boring`, `understood`, `not understood`allowing for streamlined categorization.
-    1. Choose the appropriate `staff member` to reslove that query.
-    1. we are using the `@results.ticket` from the previous step(step 1)
+4. The third node is `Open ticket` node which is used to create a new ticket from flow
+    1. Choose `Open a ticket with a human agent` from the dropdown in node action.
+    1. There we can add the labels like `registration`, `help`, `activity` to help in streamlining open tickets based on labels
+    1. Choose the appropriate `staff member` to resolve that query.
+    1. At last is the ticket body, here we are using the `@results.ticket` from the previous step(step 1)
+       
+    ![image](https://github.com/glific/docs/assets/40158831/68a2a123-21ce-4793-b743-dc45b282f5d6)
 
        
 ![image](https://github.com/glific/docs/assets/90472056/72c47272-e800-4e52-bc12-f9f2280975cf)
 
 ___
 
-4. Click `OK` to save the changes
+5. Click `OK` to save the changes
+6. Publish the flow and test the flow
 
 
 
 # View Support Ticket Inquiries
 
-1. To view `support tickets`, navigate to the `Support Tickets` section by hovering over `Flows` in the left panel and selecting it. In this page you can see all the tickets, their status and assigned members. Here's how the page would look like:
+1. To view `support tickets`, navigate to the `Support Tickets` section by hovering over `Flows` in the left panel and selecting it. In this screen, you can see all the tickets, their status, and assigned staff members. Here's how the page would look like:
    
 ![support](https://github.com/glific/docs/assets/90472056/c787bd94-07a8-4111-8f49-cca6e6c1ee2f)
 
-___
+There are five columns in the Tickets screen namely:
 
-Columns in the tickets include:
+`ISSUE:` Displays the posted queries.
 
-`ISSUE: ` Displays the posted queries.
+`OPENED BY:` Indicates who opened the ticket.
 
-`OPENED BY: ` Indicates who opened the ticket.
+`STATUS:` Shows whether the ticket is `open` or `closed`.
 
-`STATUS: ` Shows whether the ticket is `open` or `closed`.
+`ASSIGNED TO:` Specifies the staff member assigned to the ticket.
 
-`ASSIGNED TO: ` Specifies the team member assigned to the ticket.
-
-`ACTIONS: ` Provides options to add remarks or send messages.
+`ACTIONS:` Provides options to add remarks, change the assignee or status of the ticket.
 
 
 Once a ticket is created, users can make edits by utilizing the `add remark` option. Additionally, they can close the ticket by providing a closing remark and setting the status as `closed`. These features allow for easy ticket management and efficient resolution.
 
-![photo](https://github.com/glific/docs/assets/90472056/48e2ec4c-532c-4ecc-89f6-dc564c9dc570)
+![photo](https://github.com/glific/docs/assets/40158831/89ada4f9-9970-435e-a700-ef05e853ff83)
 
 ___
 
