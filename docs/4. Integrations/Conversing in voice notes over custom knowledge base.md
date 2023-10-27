@@ -24,12 +24,12 @@ Function to use - “jugalbandi-voice”
 <img width="843" alt="image5" src="https://user-images.githubusercontent.com/143380171/278220103-a95c78bb-2ad0-49f6-a7a8-9f740cb2468e.png"/>
 
 
-“Input_language” : <<specify as per the jugalbandi platform>> or you can use the @contact.language 
-“output_format” : <<text or voice>> 
-“query_text” : <<if the input is in text format” 
-“audio_url” : <<send the flow variable of the voice note received>>
-“prompt” : <<any contextual or system prompt>> 
-“uuid_number” : <<custom knowledge base which has been uploaded in the jugalbandi platform>>
+“Input_language” : specify as per the jugalbandi platform or you can use the @contact.language 
+“output_format” : text or voice
+“query_text” : if the input is in text format
+“audio_url” : send the flow variable of the voice note received
+“prompt” : any contextual or system prompt 
+“uuid_number” : custom knowledge base which has been uploaded in the jugalbandi platform
 
 ## How to get the response back and get the voice note
 - The first node in the “success” pathway is pulling the responses 
