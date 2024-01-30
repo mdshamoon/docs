@@ -18,12 +18,12 @@ _The feature is in beta version and can be enabled/ disabled for any given organ
 
 1. Find `Translation` button is in the flow editor
 
-<img width="745" alt="Screenshot 2024-01-29 at 5 20 08 PM" src="https://github.com/mahajantejas/docs/assets/141305477/7a3b9598-4f54-47c3-b30a-b43ca633b6e1">
+<img width="745" alt="Screenshot 2024-01-29 at 5 20 08 PM" src="https://github.com/mahajantejas/docs/assets/141305477/7a3b9598-4f54-47c3-b30a-b43ca633b6e1" />
 
 
 2. There are 4 options to get Translations
 
-<img width="467" alt="Screenshot 2024-01-20 at 5 57 39 PM" src="https://github.com/mahajantejas/docs/assets/141305477/68d30647-905d-4ef2-8b5f-fb65dac0ff65">
+<img width="467" alt="Screenshot 2024-01-20 at 5 57 39 PM" src="https://github.com/mahajantejas/docs/assets/141305477/68d30647-905d-4ef2-8b5f-fb65dac0ff65" />
 
 - `Automatic translation`: takes the content in the default language flow and adds translations in all the langauges enabled within the the flow. This changes the flow, publishing the after this step will modify the flow to have translations done 
 
@@ -31,7 +31,7 @@ _The feature is in beta version and can be enabled/ disabled for any given organ
 
 - `Export translations`: Exports the content present into CSV format. This can be used to add translations manually, and then import the CSV with translated content in the flow directly. Or to just export the already available translations of the flow for further proofreading and corrections.
 
-<img width="732" alt="Screenshot 2024-01-29 at 5 20 30 PM" src="https://github.com/mahajantejas/docs/assets/141305477/71d7bdc9-952f-4a43-866e-664ab30cdfce">
+<img width="732" alt="Screenshot 2024-01-29 at 5 20 30 PM" src="https://github.com/mahajantejas/docs/assets/141305477/71d7bdc9-952f-4a43-866e-664ab30cdfce" />
 
 - `Import translation`: This enables importing of the proofread and corrected content as a CSV and have the content in the given Glific flow updated.
 
@@ -48,7 +48,7 @@ _The feature is in beta version and can be enabled/ disabled for any given organ
 - Uploading CSV with Blank/ Empty cells where translations are expected to be erases the translations in the given nodes (if the translations are already present)
 7. In case automatic translations fail, which may happen for flows that contain large text messages (more than 200 words in the same node). In such cases, `export without translations` and then create translations using `=googletranslate` formula then `import translation`
 
-<img width="737" alt="Screenshot 2024-01-29 at 5 20 41 PM" src="https://github.com/mahajantejas/docs/assets/141305477/aa4b9057-3cbd-47ca-966c-d2fbf5549b06">
+<img width="737" alt="Screenshot 2024-01-29 at 5 20 41 PM" src="https://github.com/mahajantejas/docs/assets/141305477/aa4b9057-3cbd-47ca-966c-d2fbf5549b06" />
 
 **When it will not work**
 
