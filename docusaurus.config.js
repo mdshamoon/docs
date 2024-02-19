@@ -5,7 +5,7 @@ require("dotenv").config();
 console.log(
     "https://deploy-preview-" +
         process.env.REVIEW_ID +
-        "-" +
+        "--" +
         process.env.HOME_PAGE_URL
 );
 
