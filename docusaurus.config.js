@@ -18,7 +18,7 @@ const config = {
         process.env.REVIEW_ID +
         "-" +
         process.env.HOME_PAGE_URL,
-    baseUrl: "/docs/",
+    baseUrl: "/",
     onBrokenLinks: "ignore",
     onBrokenMarkdownLinks: "ignore",
     favicon: "img/favicon.ico",
