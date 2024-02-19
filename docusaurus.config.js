@@ -6,12 +6,11 @@ require("dotenv").config();
 const config = {
     title: "Glific",
     tagline: "An open source two way communication platform",
-    url:
-        "https://deploy-preview-" +
-        process.env.REVIEW_ID +
-        "-" +
-        process.env.HOME_PAGE_URL,
-    baseUrl: "/docs/",
+    url: "https://glific.github.io",
+    baseUrl: `/${process.env.BASE_URL ? process.env.BASE_URL : ""}`,
+    customFields: {
+        baseUrlRedirect: process.env.BASE_URL,
+    },
     onBrokenLinks: "ignore",
     onBrokenMarkdownLinks: "ignore",
     favicon: "img/favicon.ico",
