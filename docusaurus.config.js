@@ -2,23 +2,11 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 require("dotenv").config();
 
-console.log(
-    "https://deploy-preview-" +
-        process.env.REVIEW_ID +
-        "--" +
-        process.env.HOME_PAGE_URL,
-    "/" + process.env.BASE_URL
-);
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: "Glific",
     tagline: "An open source two way communication platform",
-    url:
-        "https://deploy-preview-" +
-        process.env.REVIEW_ID +
-        "-" +
-        process.env.HOME_PAGE_URL,
+    url: "https://glific.github.io",
     baseUrl: `/${process.env.BASE_URL ? process.env.BASE_URL : ""}`,
     customFields: {
         baseUrlRedirect: process.env.BASE_URL,
