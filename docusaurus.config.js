@@ -2,6 +2,13 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 require("dotenv").config();
 
+console.log(
+    "https://deploy-preview-" +
+        process.env.REVIEW_ID +
+        "-" +
+        process.env.HOME_PAGE_URL
+);
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: "Glific",
