@@ -1,4 +1,4 @@
-> ### **3 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Advanced`**
+> ### **3 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Advanced`**
 
 **Leverage the capabilities of GPT models developed by OpenAI by using Jugalbandi APIs. Jugalbandi APIs is enhancing Glific by providing Retreival Augemented Generation or in simple words, enabling NGOs to use custom knowledge base for GPT models to answer from.**
 
@@ -39,16 +39,28 @@ The function is then called with three key-value pairs as the function body
 
 ![image](https://github.com/glific/docs/assets/40158831/7f509016-f7fd-43c8-83c1-b133dd95a7dc)
 
-`url:` URL depends on which model we use to process the response as Jugalbandi offers 
+`url:` URL is referencing a given end point from the [Jugalbandi APIs](https://api.jugalbandi.ai/docs) some examples are given below
 
-1. GPT3.5: `https://api.jugalbandi.ai/query-with-langchain-gpt3-5`
-1. GPT4: `https://api.jugalbandi.ai/query-with-langchain-gpt4`
-1. Langchain: `https://api.jugalbandi.ai/query-with-langchain`
-1. GPTindex: `https://api.jugalbandi.ai/query-with-gptindex`
+_below is picture showing the list of end points_
+
+<img width="1453" alt="Screenshot 2024-02-13 at 8 05 22 PM" src="https://github.com/glific/docs/assets/141305477/972af81e-647b-429f-90ab-8ce2f5f8e635"/>
+
+following shows how to use these end points in the webhook call parameter: 
+
+1. to use GPT3.5: `https://api.jugalbandi.ai/query-with-langchain-gpt3-5`
+1. to use GPT4: `https://api.jugalbandi.ai/query-with-langchain-gpt4`
+2. to use GPT4 using custom prompt: `https://api.jugalbandi.ai/query-with-langchain-gpt4-custom-prompt`
 
 `uuid_number:` The "uuid_number" is a special code assigned to a file when it is uploaded through the  [jugalbandi API](https://api.jugalbandi.ai/docs#/Document%20Store/upload_files_upload_files_post)  then this `UUID` is used to find the relevant information from the knowledge base and gives it back to you.
 
 `query_string:` user query asked in flow
+
+additionally, an extra parameter can be passed called `prompt:` in the API end points which end with `custom-prompt`. This is a system prompt that can be passed to the model. This enables NGOs to experiment with prompt engineering. Generally it can be used to provide guidelines or steps or explicit instructions for the LLM to process the 'query_string' being passed, like
+-  to limit the length of response generated,
+-  decline to answer if the question asked is outside the scope of the documents uploaded (this prevents what is termed as hallucination by the LLMs)
+-  generate in a specific tone, ex catering to a student below the age of 15 etc.
+-  anything else under the ambit of prompt engineering which allows one to get creative in eliciting responses from LLMs
+
 
 Additionally, you can use [Google sheet](https://glific.github.io/docs/docs/Product%20Features/Flows/Flow%20Actions/Link%20Google%20Sheets/) feature to store response into google sheet as this data can later be analyzed to evaluate each model's accuracy and effectiveness and help you make a decision.
 
