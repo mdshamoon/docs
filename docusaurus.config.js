@@ -19,7 +19,10 @@ const config = {
         process.env.REVIEW_ID +
         "-" +
         process.env.HOME_PAGE_URL,
-    baseUrl: "/" + (process.env.BASE_URL ? process.env.BASE_URL : ""),
+    baseUrl: `/${process.env.BASE_URL ? process.env.BASE_URL : ""}`,
+    customFields: {
+        baseUrlRedirect: process.env.BASE_URL,
+    },
     onBrokenLinks: "ignore",
     onBrokenMarkdownLinks: "ignore",
     favicon: "img/favicon.ico",
