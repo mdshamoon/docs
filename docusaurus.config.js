@@ -74,11 +74,6 @@ const config = {
                     position: "left",
                 },
                 {
-                    type: "docsVersionDropdown",
-                    position: "left",
-                    dropdownActiveClassDisabled: true,
-                },
-                {
                     href: "https://github.com/glific",
                     label: "GitHub",
                     position: "right",
