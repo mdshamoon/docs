@@ -1,0 +1,15 @@
+> ### **5 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Beginner`**
+
+## Enable Google Sheet API and link to Glific
+
+Go to [Google Cloud Console](https://console.cloud.google.com) and sign in with your Gsuite account.
+
+Click on **API Service**
+
+Click on **+ Enable APIS and Services**
+Search for **Google Sheets API** in the search section select it.
+Enable the **Google Sheets API** from the enable button
+
+## Link Google Sheets API to Glific
+
+Go to Glific >> Settings>> Google Sheets >>Tick is Active >> Paste the GOTH credentails >> Save
