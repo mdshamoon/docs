@@ -1,0 +1,30 @@
+### **3 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Beginner`**
+
+
+## Deduction Type of Messages on the WhatsApp Business Platform.
+
+WhatsApp implements a billing model based on conversations rather than individual messages.A conversation refers to a continuous exchange of messages within a 24-hour period between the BOT and the end-user.
+Charges are incurred when messages sent by the BOT are successfully delivered to the end user.
+
+## Conversation Categories
+
+1) **Marketing** — Enables you to achieve a wide range of goals, from generating awareness to driving sales and retargeting customers. Examples include new product, service, or feature announcements, targeted promotions/offers, and cart abandonment reminders.
+
+2) **Utility** — Enables you to follow up on user actions or requests. Examples include opt-in confirmation, order/delivery management (e.g., delivery update); account updates or alerts (e.g., payment reminder); or feedback surveys.
+
+3) **Authentication** — This enables you to authenticate users with one-time passcodes, potentially at multiple steps in the login process (e.g., account verification, account recovery, integrity challenges).
+
+4) **Service** — Enables you to resolve customer inquiries. [Read More](https://developers.facebook.com/docs/whatsapp/pricing#Service%20Conversations)
+
+<img width="724" alt="image" src="https://github.com/glific/docs/assets/143380171/d429756e-6361-4754-ac6d-f77512360b5f"/>
+
+`Marketing`,`Utility`, and `Authentication` conversations can only be opened with template messages. `Service' conversations can only be opened with free-form messages. [Read More](https://developers.facebook.com/docs/whatsapp/pricing#opening-conversations)
+
+`UIC`: this is user user-initiated conversation: Whenever the user messages you then this type of conversation starts.
+
+`BIC`: Business initiated conversation:  Whenever the business messages the customer/end-user then this type of conversation starts
+
+`FTC`: Free tier conversation [Read More](https://developers.facebook.com/docs/whatsapp/pricing#free-tier-conversations)
+
+
+
