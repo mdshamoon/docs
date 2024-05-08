@@ -1,4 +1,5 @@
-> ### **6 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Advanced`**
+> ### **6 minutes read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Advanced`**
+
 
 **Dialog Flow can be used in flows to send responses to end-users based on their intent when a specific keyword doesn’t match.**
 
@@ -7,6 +8,8 @@
 <iframe width="800" height="500" src="https://www.youtube.com/embed/oXIE_b-9UnQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <br />
+
+_The UI of the platform has been updated since the webinar was conducted. The functionalities shown all remain the same_
 
 ## Using DialogFlow NLP agent within Glific.
 
@@ -123,21 +126,15 @@ Troubleshooting tip :  Added a new intent in Dialog Flow agent does not reflect 
 
 ## Step 2 : Configure Dialog Flow in Glific to connect to your GCP Project
 
-1 .  Click on `setting` icon.
+1 .  Click on `NGO main account`, find `Settings` and go to `Dialogflow`.
 
-![image](https://user-images.githubusercontent.com/32592458/212662590-a7fd2495-68ae-4c16-a47a-f35ef7d24778.png)
-
-
-
-2 . Click on `edit` icon of Dialog flow
+<img width="384" alt="Screenshot 2024-03-04 at 3 11 54 PM" src="https://github.com/glific/docs/assets/141305477/1405fdf5-b01d-420c-adc3-3fee2849f03e" />
 
 
-
-![image](https://user-images.githubusercontent.com/32592458/212662619-911da041-727b-44b4-b259-6a4b942e0840.png)
 
 3 .  Enter `Goth Credentials` of your Dialog flow.  It is same as it is for your GCS account. Check the &quot;Is active&quot; box as well.
 
-![image](https://user-images.githubusercontent.com/32592458/212662665-dae4e28a-b8b4-42e0-9bb9-85cdeeaab5c5.png)
+<img width="732" alt="Screenshot 2024-03-04 at 3 12 39 PM" src="https://github.com/glific/docs/assets/141305477/cb8c0128-5cfa-4b80-a0a9-0e7faf94acf2" />
 
 4 . Click on **Save** button
 
@@ -150,7 +147,6 @@ Note : This is only needed if your service account doesn&#39;t have complete own
 2 .  Click on `IAM` menu from left menu list.
 
 ![image](https://user-images.githubusercontent.com/32592458/212662736-ad4a830c-e91e-4395-a8b5-4b9098bf811a.png)
-
 
 
 
