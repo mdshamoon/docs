@@ -20,8 +20,13 @@ Recognize the contents in an image being sent by your users. Some example usecas
   
   <img width="529" alt="Screenshot 2024-05-07 at 6 17 37 PM" src="https://github.com/glific/docs/assets/141305477/5d5e202c-dd9c-4569-94da-ab53d535d749"/>
 
-7. Use the variable `@results.webhookname.response` to print the response from the AI model. In the above example the response will be printed by calling `@results.gptvision.response`
+7. To use the `gpt-4o`provide additional parameter called `model`
+  <img width="631" alt="Screenshot 2024-05-22 at 3 33 37 PM" src="https://github.com/glific/docs/assets/141305477/ad5ea9fc-727b-43c5-ad4c-a11521542177" />
 
-<img width="949" alt="Screenshot 2024-05-07 at 6 25 14 PM" src="https://github.com/glific/docs/assets/141305477/d5bca9f1-06be-4374-ba96-b5371fc36581" />
+ 
+10. Use the variable `@results.webhookname.response` to print the response from the AI model. In the above example the response will be printed by calling `@results.gptvision.response`
+<img width="579" alt="Screenshot 2024-05-22 at 3 34 06 PM" src="https://github.com/glific/docs/assets/141305477/b16d4708-b18e-40ff-8e53-57adc50c92c2" />
+
+
 
 Here is an exmaple flow for you to import and try it out: https://drive.google.com/file/d/1p-L5bPnXtsZZKBA3_pJr5wsdeQm3taVD/view?usp=sharing

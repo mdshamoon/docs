@@ -45,20 +45,23 @@ _Representative image to explain the steps in OpenAI API calls in a simple flow_
  ` {
   "contact": "@contact",
   "results": "@results",
-  "question_text": "@results.question" 
+  "question_text": "@results.question",
+   "gpt_model":"gpt-4o",
+   "prompt":"Provide an additional prompt for the model"
   }`
 
 here `question_text` is the parameter name corresponding to user question. 
 
-<img width="711" alt="Screenshot 2024-02-07 at 10 53 21 AM" src="https://github.com/glific/docs/assets/141305477/65622c0e-2dfb-41fb-8f6d-a836e8a0f81d" />
-  
-4. The response from GPT is shown as `@results.webhookresultname.parsed_msg`, in the given example `gpt_response` is the webhook result name. 
+`gpt_model` is the parameter to help you select the best model for performing the given task. The model name must correspond to the text models given in the OpenAI API documentation here [here](https://platform.openai.com/docs/models) 
+
+<img width="671" alt="Screenshot 2024-05-22 at 3 52 18 PM" src="https://github.com/glific/docs/assets/141305477/09211b9a-132b-4964-9388-a1aa00ed28bc" />
+
+
+
+4. The response from GPT is shown as `@results.webhookresultname.parsed_msg`, in the given example `gpt_response` is the webhook result name. (see the first image)
 
 
 ## Limitations 
-1. At present, this is simple question answer with the GPT model `gpt-3.5-turbo-16k`
-2. Selection of GPT model is not yet customizable from org Glific instances
-3. Additional system prompt is not yet customizable from org Glific instances
-4. Parameters like temperature, top P etc are not yet customizable from org Glific instances
+1. Text to speech and speech to text models cannot be used via this webhook call.
 
 _Reach out to the Glific team to flag any further customizations within this functionality_
