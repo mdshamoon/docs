@@ -61,3 +61,7 @@ _this is the function body passed in the subsequent webhooks to answer follow up
 ## Limitations
 1. The changes in the knowledge base, or the prompt have to be routed through the glific team
 
+## Video of showcase
+<iframe width="560" height="315" src="https://www.youtube.com/embed/J_sFgOUFFOA?si=KfDAPkoUreBudM8Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+_Watch from 12 minute mark to know the exact steps to follow_
