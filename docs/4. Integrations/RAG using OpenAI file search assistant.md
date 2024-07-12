@@ -42,19 +42,23 @@ NGOs can use this feature for free by following this document
 3. Go to `function body` and pass the following parameter
 `{
   "question": "@results.flowresult",
-  "assistant_id": "asst_xxxxx"
+  "assistant_id": "asst_xxxxx",
+  "remove_citation":true
 }`
 
 - in `question` parameter pass the flow variable containing the question asked by the user
 - in `assistant_id` pass the assistant id obtained from Glific team in step 4 of "how to get started"
+- in `remove_citation` pass `true` to prevent cryptic citation marks from showing up in the response.
 
-<img width="546" alt="Screenshot 2024-06-05 at 12 26 46 PM" src="https://github.com/glific/docs/assets/141305477/2f4ce500-3720-4534-a45d-4074bc7f8aab"/>
+<img width="624" alt="Screenshot 2024-07-11 at 5 06 50 PM" src="https://github.com/glific/docs/assets/141305477/8ce8eb0e-5cb9-492e-a3e7-fc52260fe24b"/>
+
 
 4. The response generated will be printed as @results.webhookresultname.message, in the given example filesearch is the webhook result name. (see the first image)
 
 5. To answer the subsequent questions based on the context of the previous conversation, the subsequent webhook pass the additional parameter called `thread_id`. This parameter has to have the value of `@results.previouswebhookname.thread_id`. In the example shown, the previous webhook result name is "filesearch"
 
-<img width="538" alt="Screenshot 2024-06-05 at 12 32 19 PM" src="https://github.com/glific/docs/assets/141305477/30267540-a1ff-4c6d-a866-11d037195d2f" />
+<img width="620" alt="Screenshot 2024-07-11 at 5 07 58 PM" src="https://github.com/glific/docs/assets/141305477/40de9e15-07ec-41de-8294-64eb08d3c71e" />
+
 
 _this is the function body passed in the subsequent webhooks to answer follow up questions_
 
