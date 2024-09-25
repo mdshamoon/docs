@@ -4,37 +4,22 @@
 
 _**Leverage the capabilities of GPT models developed by OpenAI by using OpenAI APIs.**_
 
-## Pre-requisites 
-1. Create an account in OpenAI platform [platform](https://openai.com/product) 
-2. Create new API keys
-3. Make sure there is enough credit in OpenAI account to allow usage.
-4. Pricing for API calls is as per OpenAI platform [pricing](https://openai.com/pricing)
-   
-<img width="1060" alt="Screenshot 2024-02-07 at 10 50 58 AM" src="https://github.com/glific/docs/assets/141305477/d3c22780-a4ae-4aaa-b196-1d079fce7eb5" />
-
-_Above is a representative image from the OpenAI platform account_
 
 ## How it will work 
 
 1. Question is asked by the user after the flow is initiated
 2. OpenAI API call is made using webhooks within the flow
-3. Model being called to generate responses is `gpt-3.5-turbo-16k`
-4. The response to the question is then sent to the user
-
-## Steps to follow to set up OpenAI API in Glific platform
-1. Go to `Settings`, find `OpenAI (ChatGPT) (Beta)`
-2. Click on `is active` and paste the OpenAI API key from your OpenAI platform account
-
-<img width="591" alt="Screenshot 2024-02-07 at 10 48 51 AM" src="https://github.com/glific/docs/assets/141305477/87adef8e-1858-4aa6-8b46-7f976cfbb9fb" />
+3. Question, prompt to the model, and the type of model being called to answer the question or perform the task is provided inside the webhook params
+4. The response is returned from the GPT models which can be sent to the user directly or used as desired in the flow.
+   
 
 ## Using the webhook for OpenAI API call in a Glific flow
 
-<img width="1069" alt="Screenshot 2024-02-07 at 9 59 24 AM" src="https://github.com/glific/docs/assets/141305477/babb9e27-fce5-4b2b-81d9-58017fd1a079" />
+<img width="930" alt="Screenshot 2024-09-25 at 11 10 13 AM" src="https://github.com/user-attachments/assets/3307ead2-1dc1-4459-a31b-ec11579b475d"/>
 
 _Representative image to explain the steps in OpenAI API calls in a simple flow_
 
-[Sample flow](https://drive.google.com/file/d/1jl0NWn73YlK1qMRedaPnGCQwDKHfG_7j/view?usp=drive_link)
-
+[Sample flow](https://drive.google.com/file/d/1r2dKE1i95lKrz6V1BiEyvZTXgxXgX87N/view?usp=sharing)
 
 1. Get the user question 
 2. In `call a webhook` node, select `function` and paste function name as `parse_via_chat_gpt`
@@ -43,8 +28,6 @@ _Representative image to explain the steps in OpenAI API calls in a simple flow_
 
 3. Share the following function body 
  ` {
-  "contact": "@contact",
-  "results": "@results",
   "question_text": "@results.question",
    "gpt_model":"gpt-4o",
    "prompt":"Provide an additional prompt for the model"
@@ -57,11 +40,6 @@ here `question_text` is the parameter name corresponding to user question.
 <img width="671" alt="Screenshot 2024-05-22 at 3 52 18 PM" src="https://github.com/glific/docs/assets/141305477/09211b9a-132b-4964-9388-a1aa00ed28bc" />
 
 
-
 4. The response from GPT is shown as `@results.webhookresultname.parsed_msg`, in the given example `gpt_response` is the webhook result name. (see the first image)
-
-
-## Limitations 
-1. Text to speech and speech to text models cannot be used via this webhook call.
 
 _Reach out to the Glific team to flag any further customizations within this functionality_
