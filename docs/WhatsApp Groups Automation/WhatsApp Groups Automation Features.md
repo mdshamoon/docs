@@ -1,45 +1,7 @@
-> ### **5 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Beginner`**
+### **5 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Beginner`**
 
-## User Guide: WhatsApp Groups Automation
-
-### Contents
-1. [Pre-requisites](#pre-requisites)
-2. [Set-up](#set-up)
-3. [Group chats](#group-chats)
-4. [Group collections](#group-collections)
-5. [Sending messages](#sending-messages)
-6. [Sending media](#sending-media)
-7. [Scheduling messages and media](#scheduling-messages-and-media)
-8. [Pricing](#pricing)
-9. [Video Showcase](#video-showcase)
-
-### Pre-requisites
-1. Have a phone number on whatsapp
-2. Phone number to be part of the WhatsApp groups (this has to be done manually)
-3. The trial (free) account of Maytapi ( active for 3 days.) for more details
-4. Should be onboarded to Glific platform
-
-### Set-up
-Step 1: Connecting Phone number to Maytapi 
-
-1. Create maytapi account https://console.maytapi.com/login
-2. Log in with google id and link a phone number (follow instructions on the page)
-3. Set up the payment option (30$ per phone per month) in Maytapi
-4. Or proceed with free trial which enables the phone to be active for 3 days) 
-
-Step 2: Connecting Maytapi to Glific 
-
-1. In Maytapi go to webhook and enter the following webhook url 
-
-https://api.**ngo-shortcode**.glific.com/maytapi
-
-Ex, if your glific domain is www.xyz.glific.com then use the maytapi webhook url becomes https://api.xyz.glific.com/maytapi
-
-2. In Glific, go to setting, go to maytapi, add product id and token id from the Maytapi
-3. Click on save
-4. This completes the set-up
-
-You should be able to see the whatsapp groups option in the left panel that the phone number is part of and perform operations like send, receive and schedule message to a group of groups. 
+## User Guide: WhatsApp Groups Automation Features: Basic
+This document provides details on using basic features of syncing all the WhatsApp Groups, sending messages and media to the groups from the Glific interface, creating collections or groups of groups to send targetted messages to a large number of groups and scheduling messages to the collections in advance. 
 
 ### Group Chats 
 
@@ -49,7 +11,7 @@ You should be able to see the whatsapp groups option in the left panel that the 
 ### Group Collections
 1. Group collection is a group of groups. A way to club together with groups. This is to enable sending or scheduling of messages to the bulk of the groups from the single action. 
 
-#### How to create.
+#### How to create Group Collections
 1. Go to Group Collection
 
 <img width="1129" alt="Screenshot 2024-04-16 at 3 27 27 PM" src="https://github.com/glific/docs/assets/141305477/10d30710-c7d2-4c3b-b9f0-b9675bba0c70"/>
@@ -109,14 +71,6 @@ Follow the same steps as above under the `Groups Collection` menu in the `Group 
 
 <img width="653" alt="Screenshot 2024-04-16 at 4 31 14 PM" src="https://github.com/glific/docs/assets/141305477/99bf5651-985d-4a2e-a243-cdcf89a72887" />
 
-### Pricing
-#### MayTapi
-1. Free trial for 3 days
-2. 30$ per month per phone being linked to Maytapi
-3. Upto 3 phones can be linked per Maytapi account 
-
-#### Messaging 
-No separate cost for messaging needs to be paid.
 
 ### Video Showcase
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RdYJTBmSXYs?si=r1lCTEq2eO18ZEXo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
