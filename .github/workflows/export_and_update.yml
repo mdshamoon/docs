@@ -1,11 +1,11 @@
-name: Consolidate and Upload Documentation
+name: Consolidate and Update Documentation
 
 on:
   pull_request:
     branches: [main]
 
 jobs:
-  consolidate-and-upload:
+  consolidate-and-update:
     runs-on: ubuntu-latest
 
     steps:
@@ -62,6 +62,13 @@ jobs:
                               merged_file.write(content + "\n\n---\n\n")
           EOF
 
+      # Step 5: Upload consolidated file as an artifact
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: consolidated-documentation
+          path: merged_documentation.md
+
       # Step 5: Upload to Vector Store
       - name: Upload to Vector Store
         env:
@@ -103,7 +110,9 @@ jobs:
             deleted_vector_store_file = client.beta.vector_stores.files.delete(
               vector_store_id = vector_store_id,
               file_id = old_file_id )
-            
+
+            client.files.delete(old_file_id)
+
             print("Old file removed:", deleted_vector_store_file)
 
             if vector_store_id:
