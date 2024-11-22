@@ -72,17 +72,20 @@ jobs:
           import openai
           import os
 
-          openai.api_key = os.getenv("OPENAI_API_KEY")
+          api_key = os.getenv("OPENAI_API_KEY")
           vector_store_id = os.getenv("VECTOR_STORE_ID")
+
+          client = OpenAI(api_key)  # Replace with your actual key
 
           # Read the consolidated markdown file
           with open("merged_documentation.md", "r") as file:
               content = file.read()
 
           # Upload the consolidated file to the OpenAI vector store
-          response = openai.File.create(
-              file=open("merged_documentation.md", "rb"),
-              purpose="fine-tune"  # or "search", depending on your vector store requirements
+
+          response = client.files.create(
+          file=open("/content/merged_documentation.md", "rb"),
+          purpose="assistants"
           )
 
           file_id = response["id"]
@@ -90,10 +93,8 @@ jobs:
 
           # Optionally associate the file with a vector store
           if vector_store_id:
-              print(f"Associating file {file_id} with vector store {vector_store_id}...")
-              # Replace this block with the appropriate call to link file to vector store
-              # For example, use the OpenAI API or custom API for your vector store
-              # Example:
-              # response = some_vector_store_api.add_file_to_vector_store(file_id, vector_store_id)
-              print("File successfully associated.")
+              client.beta.vector_stores.files.create(
+                vector_store_id=vector_store_id,
+                file_id=file.id
+            )
           EOF
