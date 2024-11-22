@@ -62,13 +62,6 @@ jobs:
                               merged_file.write(content + "\n\n---\n\n")
           EOF
 
-      # Step 5: Upload consolidated file as an artifact
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: consolidated-documentation
-          path: merged_documentation.md
-
       # Step 5: Upload to Vector Store
       - name: Upload to Vector Store
         env:
