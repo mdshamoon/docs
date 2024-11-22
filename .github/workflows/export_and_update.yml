@@ -94,11 +94,22 @@ jobs:
           file_id = response.id
           print("File uploaded successfully with ID:", file_id)
 
-          # Optionally associate the file with a vector store
-          if vector_store_id:
-              client.beta.vector_stores.files.create(
-                vector_store_id=vector_store_id,
-                file_id=file_id
+          if file_id:
+            vector_store_files = client.beta.vector_stores.files.list(
+              vector_store_id = vector_store_id,
             )
+
+            old_file_id = vector_store_files.data[0].id
+            
+            deleted_vector_store_file = client.beta.vector_stores.files.delete(
+              vector_store_id = vector_store_id,
+              file_id = file_id)
+            
+            print("Old file removed:", deleted_vector_store_file)
+
+            if vector_store_id:
+                client.beta.vector_stores.files.create(
+                  vector_store_id=vector_store_id,
+                  file_id=file_id)
 
           EOF
