@@ -69,13 +69,14 @@ jobs:
           VECTOR_STORE_ID: ${{ secrets.VECTOR_STORE_ID }}
         run: |
           python - <<EOF
-          import openai
+          from openai import OpenAI
           import os
 
-          api_key = os.getenv("OPENAI_API_KEY")
           vector_store_id = os.getenv("VECTOR_STORE_ID")
 
-          openai.api_key = api_key
+          client = OpenAI(
+            api_key=os.getenv("OPENAI_API_KEY")
+          )
 
           # Read the consolidated markdown file
           with open("merged_documentation.md", "r") as file:
@@ -83,20 +84,11 @@ jobs:
 
           # Upload the consolidated file to the OpenAI vector store
 
-          response = openai.File.create(
-          file=open("merged_documentation.md", "rb"),
-          purpose="assistants"
+          response = openAI.files.create(
+            file=open("merged_documentation.md", "rb"),
+            purpose="assistants"
           )
 
           print(response)
 
-          file_id = response["id"]
-          print("File uploaded successfully with ID:", file_id)
-
-          # Optionally associate the file with a vector store
-          if vector_store_id:
-              openai.vector_stores.files.create(
-                vector_store_id=vector_store_id,
-                file_id=file.id
-            )
           EOF
