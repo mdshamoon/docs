@@ -32,7 +32,7 @@ jobs:
 
           source_dir = "./"  # Current repo directory
           output_file = "merged_documentation.md"
-          base_url = "https://glific.github.io/docs/docs/"  # Replace with your GitHub Pages URL
+          base_url = "https://glific.github.io/docs"  # Replace with your GitHub Pages URL
 
           def clean_serial_numbers(name):
               return re.sub(r'^\d+\.\s*', '', name)
