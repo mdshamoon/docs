@@ -91,7 +91,7 @@ jobs:
 
           print(response)
 
-          file_id = response["id"]
+          file_id = response.id
           print("File uploaded successfully with ID:", file_id)
 
           # Optionally associate the file with a vector store
