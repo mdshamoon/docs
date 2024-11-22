@@ -98,7 +98,7 @@ jobs:
           if vector_store_id:
               client.beta.vector_stores.files.create(
                 vector_store_id=vector_store_id,
-                file_id=file.id
+                file_id=file_id
             )
 
           EOF
