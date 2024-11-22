@@ -84,7 +84,7 @@ jobs:
           # Upload the consolidated file to the OpenAI vector store
 
           response = openai.File.create(
-          file=open("/content/merged_documentation.md", "rb"),
+          file=open("merged_documentation.md", "rb"),
           purpose="assistants"
           )
 
