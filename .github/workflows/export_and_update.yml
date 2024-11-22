@@ -91,4 +91,14 @@ jobs:
 
           print(response)
 
+          file_id = response["id"]
+          print("File uploaded successfully with ID:", file_id)
+
+          # Optionally associate the file with a vector store
+          if vector_store_id:
+              client.vector_stores.files.create(
+                vector_store_id=vector_store_id,
+                file_id=file.id
+            )
+
           EOF
