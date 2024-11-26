@@ -1,0 +1,116 @@
+name: Consolidate and Update Documentation
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  consolidate-and-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9" # Use your preferred version
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: pip install openai
+
+      # Step 4: Consolidate Markdown Files
+      - name: Consolidate Markdown Files
+        run: |
+          python - <<EOF
+          import os
+          import re
+
+          source_dir = "./"  # Current repo directory
+          output_file = "merged_documentation.md"
+          base_url = "https://glific.github.io/docs"  # Replace with your GitHub Pages URL
+
+          def clean_serial_numbers(name):
+              return re.sub(r'^\d+\.\s*', '', name)
+
+          with open(output_file, "w") as merged_file:
+              merged_file.write("# Consolidated Documentation\n\n")
+
+          for root, _, files in os.walk(source_dir):
+              for file in files:
+                  if file.endswith(".md"):
+                      relative_path = os.path.relpath(os.path.join(root, file), source_dir)
+                      clean_path_parts = [
+                          clean_serial_numbers(part) for part in relative_path.split(os.sep)
+                      ]
+                      relative_path_cleaned = "/".join(clean_path_parts)
+                      relative_path_url = os.path.splitext(relative_path_cleaned)[0].replace(" ", "%20")
+                      page_url = f"{base_url}/{relative_path_url}"
+
+                      page_title = clean_serial_numbers(os.path.splitext(file)[0])
+
+                      with open(output_file, "a") as merged_file:
+                          merged_file.write(f"## [{page_title}]({page_url})\n\n")
+                      
+                      with open(os.path.join(root, file), "r") as md_file:
+                          content = md_file.read()
+                          with open(output_file, "a") as merged_file:
+                              merged_file.write(content + "\n\n---\n\n")
+          EOF
+
+      # Step 5: Upload to Vector Store
+      - name: Upload to Vector Store
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          VECTOR_STORE_ID: ${{ secrets.VECTOR_STORE_ID }}
+        run: |
+          python - <<EOF
+          from openai import OpenAI
+          import os
+
+          vector_store_id = os.getenv("VECTOR_STORE_ID")
+
+          client = OpenAI(
+            api_key=os.getenv("OPENAI_API_KEY")
+          )
+
+          # Read the consolidated markdown file
+          with open("merged_documentation.md", "r") as file:
+              content = file.read()
+
+          # Upload the consolidated file to the OpenAI vector store
+
+          response = client.files.create(
+            file=open("merged_documentation.md", "rb"),
+            purpose="assistants"
+          )
+
+          print(response)
+
+          file_id = response.id
+          print("File uploaded successfully with ID:", file_id)
+
+          if file_id:
+            vector_store_files = client.beta.vector_stores.files.list(
+              vector_store_id = vector_store_id )
+
+            old_file_id = vector_store_files.data[0].id
+
+            deleted_vector_store_file = client.beta.vector_stores.files.delete(
+              vector_store_id = vector_store_id,
+              file_id = old_file_id )
+
+            client.files.delete(old_file_id)
+
+            print("Old file removed:", deleted_vector_store_file)
+
+            if vector_store_id:
+                client.beta.vector_stores.files.create(
+                  vector_store_id = vector_store_id,
+                  file_id=file_id )
+
+          EOF
