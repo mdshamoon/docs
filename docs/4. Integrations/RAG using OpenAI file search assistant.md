@@ -4,33 +4,36 @@ _**Provide your documents, and system prompt, get GPT model to answer questions 
 
 _This is the implementation of RAG system provided by OpenAI in Glific_
 
-## How to get started 
+## How to create an OpenAI Assistant from Glific UI
 
-In this implementation, NGOs must provide the following to Glific team 
+1. Go to the `Assistants` page from the left panel.
 
-1. The files being used as knowledge base
-2. A system prompt (Glific team can help in this based on use case)
-3. Glific team will create the assistant in Glific's OpenAI account
-4. Glific team will provide the `assistant_id` to reference in the webhook calls
+<img width="1409" alt="Screenshot 2024-11-18 at 2 54 10 PM" src="https://github.com/user-attachments/assets/1aa8bcaa-b718-4c95-bca9-5b34059b077e" />
 
-As per the publication of this document, the organization does not need to have a OpenAI API account. Glific's account will be used. 
+4. Click on `Create`. This creates an blank assistant.
+ 
+<img width="1200" alt="Screenshot 2024-11-18 at 2 55 05 PM" src="https://github.com/user-attachments/assets/1597c038-f87f-4ad0-ab81-9948368adfc5" />
 
-<img width="485" alt="Screenshot 2024-06-05 at 12 48 03 PM" src="https://github.com/glific/docs/assets/141305477/bba000f8-4066-4eaf-b865-c47413e024e8"/>
+6. Define the parameters for your assistant by
+   - Choosing the most relevant model from the first drop down.
+   - Provide a name to the assistant.
+   - Provide a system prompt in the "Instructions" field. Read more on prompt engineering [here](https://glific.org/a-simple-guide-to-using-large-language-models/).
+   - Set the temperature. (Temperature can be set between 0 to 2. Keeping a higher value for temperature setting increases the creativity or randomness with which the LLM generates a response. It is recommended to keep temperature at 0)
+  
+7. Add the files or knowledge base for the assistant to generate an answer from by uploading the files. Check here for the supported file formats by the OpenAI APIs. Click on add to complete the setup of the assistant.
+   
+  <img width="698" alt="Screenshot 2024-11-18 at 2 59 41 PM" src="https://github.com/user-attachments/assets/e45b7938-ce60-4040-90e9-685c52e75800" />
 
-_Above is the representative image of the assistant which will be created in OpenAI's playground by Glific team on NGO's behalf_
+9. The `assistant id` provided below the assistant name is the id that needs to be copied from this page. This id will be used in the webhook nodes in the flow editor.
 
-### How it will work 
+<img width="523" alt="Screenshot 2024-11-18 at 3 15 05 PM" src="https://github.com/user-attachments/assets/02c62482-0fd8-4948-96cc-847f8e7345be" />
 
-1. Once the flow is initiated, the user is prompted to ask their question
-2. Webhook nodes (separate for text and voice inputs) have to be used with relevant parameters to get the responses
+## Using the OpenAI assistant in floweditor 
+Following sections details how to use assistant to answer questions from the user or create conversations. 
 
-### Pricing
-NGOs can use this feature for free by following this document 
+### Handling text inputs and outputs
+Following section shows how to use `filesearch-gpt` webhook function in Glific flows to take users' text responses as inputs and provide a text and response. 
 
-
-## Generating text responses 
-
-Following section shows how to use `filesearch-gpt` webhook function in Glific flows to take users' text responses as inputs and provide a text and response
 
 
 <img width="867" alt="Screenshot 2024-06-05 at 12 22 00 PM" src="https://github.com/glific/docs/assets/141305477/5021fa87-80ee-4e54-9d23-e9f17ba17358"/>
@@ -65,7 +68,7 @@ Following section shows how to use `filesearch-gpt` webhook function in Glific f
 
 _this is the function body passed in the subsequent webhooks to answer follow up questions_
 
-## Generating voice responses 
+### Handling voice inputs and outputs responses 
 
 Following section shows how to use `voice-filesearch-gpt` webhook function to take users' voice notes as inputs and provide a text and voice note output response in the desired langauge
 
@@ -100,6 +103,9 @@ Following section shows how to use `voice-filesearch-gpt` webhook function to ta
 
 6. The voice note response will have to be added as an expression attachment in another send message node as @results.webhookresultname.media_url
 <img width="568" alt="Screenshot 2024-08-21 at 12 13 39 PM" src="https://github.com/user-attachments/assets/6aa18420-a158-43ff-b631-ad9f288c2135"/>
+
+### Pricing
+NGOs can use AI featuresin Glific without any extra associated cost of inferencing. Glific is supported by OpenAI to in turn enable more NGOs to experiment, pilot and run programs using LLMs in order to further the impact without being constrained by cost. 
 
 ## Limitations
 1. The changes in the knowledge base, or the prompt have to be routed through the glific team
