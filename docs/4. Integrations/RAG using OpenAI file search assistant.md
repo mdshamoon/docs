@@ -108,7 +108,6 @@ Following section shows how to use `voice-filesearch-gpt` webhook function to ta
 NGOs can use AI featuresin Glific without any extra associated cost of inferencing. Glific is supported by OpenAI to in turn enable more NGOs to experiment, pilot and run programs using LLMs in order to further the impact without being constrained by cost. 
 
 ## Limitations
-1. The changes in the knowledge base, or the prompt have to be routed through the glific team
 2. To get the voice notes as a response, the Glific account must have google cloud platform linked.
    
 
