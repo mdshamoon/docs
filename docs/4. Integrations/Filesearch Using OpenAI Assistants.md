@@ -34,9 +34,8 @@ Following sections details how to use assistant to answer questions from the use
 ### Handling text inputs and outputs
 Following section shows how to use `filesearch-gpt` webhook function in Glific flows to take users' text responses as inputs and provide a text and response. 
 
+<img width="1144" alt="Screenshot 2025-02-13 at 4 41 05 PM" src="https://github.com/user-attachments/assets/5631cfbe-ecd5-40b7-8571-05289e34ec53" />
 
-
-<img width="867" alt="Screenshot 2024-06-05 at 12 22 00 PM" src="https://github.com/glific/docs/assets/141305477/5021fa87-80ee-4e54-9d23-e9f17ba17358"/>
 
 0. Get the sample flow here [Sample flow
 ](https://drive.google.com/file/d/1PBcaLT3paJ8gKAeJEdLUuSPf-nxpHYKe/view?usp=sharing)
@@ -61,10 +60,17 @@ Following section shows how to use `filesearch-gpt` webhook function in Glific f
 
 4. The response generated will be printed as @results.webhookresultname.message, in the given example filesearch is the webhook result name. (see the first image)
 
-5. To answer the subsequent questions based on the context of the previous conversation, the subsequent webhook pass the additional parameter called `thread_id`. This parameter has to have the value of `@results.previouswebhookname.thread_id`. In the example shown, the previous webhook result name is "filesearch"
+### Conversational memory
+
+5. Conversational memory is retained and can be referenced using "thread_id"
+ 
+5. To answer the subsequent questions based on the context of a question already asked, in next webhook call, an additional parameter called `thread_id` needs to be passed. This parameter has to have the value of `@results.previouswebhookname.thread_id`. In the example shown, the previous webhook result name is "filesearch"
 
 <img width="620" alt="Screenshot 2024-07-11 at 5 07 58 PM" src="https://github.com/glific/docs/assets/141305477/40de9e15-07ec-41de-8294-64eb08d3c71e"/>
 
+6. If the message body/content is different, the flow will continue without stopping due to a loop. However, if the same node_id and the same message are processed more than 3 times within the last 6 hours, the process will be terminated.
+
+<img width="1144" alt="Screenshot 2025-02-13 at 4 41 05 PM" src="https://github.com/user-attachments/assets/4f02c64d-55ad-4cd4-b97a-238c12ef1b67" />
 
 _this is the function body passed in the subsequent webhooks to answer follow up questions_
 
@@ -74,13 +80,14 @@ Following section shows how to use `voice-filesearch-gpt` webhook function to ta
 
 <img width="845" alt="Screenshot 2024-08-21 at 12 05 00 PM" src="https://github.com/user-attachments/assets/ce0c771a-c15b-4017-8e7f-10675e5f367c"/>
 
-0. Get the sample flow here [Sample flow
+1. Get the sample flow here [Sample flow
 ](https://drive.google.com/file/d/1nOch0H5JTLSasSddeGvggP44vH9IV8Vk/view?usp=sharing)
 
-1. In call a webhook node, select function and paste function name as `voice-filesearch-gpt` as shown below
+2. In call a webhook node, select function and paste function name as `voice-filesearch-gpt` as shown below
 <img width="577" alt="Screenshot 2024-08-21 at 12 05 17 PM" src="https://github.com/user-attachments/assets/320d056e-4456-4ff2-be98-895fa4b5c926"/>
 
-2. Go to `function body` and pass the following parameter
+3. Go to `function body` and pass the following parameter
+
 `{
   "contact": "@contact",
   "speech": "@results.audio_query.input",
@@ -101,8 +108,11 @@ Following section shows how to use `voice-filesearch-gpt` webhook function to ta
 4. The text response generated will be printed as @results.webhookresultname.translated_text, in the given example `gpt_voice` is the webhook result name. 
  <img width="574" alt="Screenshot 2024-08-21 at 12 13 49 PM" src="https://github.com/user-attachments/assets/86d81c30-f9fc-4ad5-8d32-b2248491c315"/>
 
-6. The voice note response will have to be added as an expression attachment in another send message node as @results.webhookresultname.media_url
+5. The voice note response will have to be added as an expression attachment in another send message node as @results.webhookresultname.media_url
 <img width="568" alt="Screenshot 2024-08-21 at 12 13 39 PM" src="https://github.com/user-attachments/assets/6aa18420-a158-43ff-b631-ad9f288c2135"/>
+
+6. Similar set-up of 2 webhooks, with the loop going over the 2nd webhook can be made (as shown in the handling of text messsages), to answer questions with the context of the ongoing conversation.
+
 
 ### Pricing
 NGOs can use AI featuresin Glific without any extra associated cost of inferencing. Glific is supported by OpenAI to in turn enable more NGOs to experiment, pilot and run programs using LLMs in order to further the impact without being constrained by cost. 
