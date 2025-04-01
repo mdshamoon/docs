@@ -1,7 +1,7 @@
 name: Consolidate and Update Documentation
 
 on:
-  push:
+  pull_request:
     branches: [main]
 
 jobs:
@@ -95,12 +95,12 @@ jobs:
           print("File uploaded successfully with ID:", file_id)
 
           if file_id:
-            vector_store_files = client.beta.vector_stores.files.list(
+            vector_store_files = client.vector_stores.files.list(
               vector_store_id = vector_store_id )
 
             old_file_id = vector_store_files.data[0].id
 
-            deleted_vector_store_file = client.beta.vector_stores.files.delete(
+            deleted_vector_store_file = client.vector_stores.files.delete(
               vector_store_id = vector_store_id,
               file_id = old_file_id )
 
@@ -109,7 +109,7 @@ jobs:
             print("Old file removed:", deleted_vector_store_file)
 
             if vector_store_id:
-                client.beta.vector_stores.files.create(
+                client.vector_stores.files.create(
                   vector_store_id = vector_store_id,
                   file_id=file_id )
 
