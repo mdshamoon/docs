@@ -49,7 +49,7 @@ Go to `Settings` -> `Google Slides` -> Activate this setting and enter the json 
 
 ## Aspect Ratios 
 ### For best results:
-- **Landscape certificates**: Use a resolution of 2550 x 3300 px.
+- **Landscape certificates**: Use a resolution of 3300 x 2550 px.
 - **Portrait certificates**: Use resolution of 816 x 1056 px
 - **Badges**: Use a square format, resolution of 600 x 600 px.
 
@@ -73,18 +73,19 @@ To change the page dimensions for a google slide
 4. Go to “import slides” in “files” 
 5. Select “upload” and “browse” to get the ppt file
 6. Import the file and see it as slide 2 on your ppt.
-7. Copy the url on the 2nd slide. This url will be used to create the certificate template on Glific. 
+7. This url on 2nd slide will be used to create the certificate template on Glific. 
 
 <img width="634" alt="Screenshot 2025-04-07 at 3 10 53 PM" src="https://github.com/user-attachments/assets/89e4656d-1c03-4ebe-bc26-2608b540a7ef" />
 
+8. Provide editor access to the google service account’s client email address.
 
-8. Certificate url is the link to the google slide template taken by copying the link on the template
+<img width="544" alt="Screenshot 2025-04-07 at 3 12 14 PM" src="https://github.com/user-attachments/assets/bf05d262-36fc-4f11-b403-926bcbf17197" />
+
+9. Certificate url is the link to the google slide template taken by copying the link.
 - Ensure that the slide template does not end with “...slide=id.p1” 
 - Ensure that the slide template is saved on the Google Drive linked to organization email id.
 
-9. Provide editor access to the google service account’s client email address.
 
-<img width="544" alt="Screenshot 2025-04-07 at 3 12 14 PM" src="https://github.com/user-attachments/assets/bf05d262-36fc-4f11-b403-926bcbf17197" />
 
 ### 2. Save the certificate template in Glific 
 
@@ -94,7 +95,8 @@ To change the page dimensions for a google slide
 2. Add a title, description (optional), and the certificate url (see step 6 in above section 
 3. The design template is now saved.
 4. The placeholders need to be added as {1} or {2}. In single curly braces with the numbers. 
-5. Ensure that the placeholders have a large enough text field to accommodate the information for contact being sent 
+5. Ensure that the placeholders have a large enough text field to accommodate the information for contact being sent
+6. The certificate is saved, and the copy id button can be used to refer back to the template while using the webhook in Glific flow. (refer steps ahead)
 
 ### 3. Use the certificate template in the flow
 1. Call the webhook with `function` name as `create_certificate` and give it an appropriate result name. 
@@ -153,7 +155,7 @@ This error happens because the id after slide indicates the location of the slid
 
 **Steps to resolve**
 - a. Copy the root slide as slide 2 and slide 3
-- b. Delete the slide 1 and 3
+- b. Delete the slide 1 and 2
 - c. Refresh the page 
 - d. See the slide url is now changed. 
 - e. Use this new url 
