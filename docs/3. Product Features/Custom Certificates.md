@@ -135,7 +135,11 @@ To change the page dimensions for a google slide
 #### 1. Use the following validation before the `create_certificate` webhook call to ensure that the certificates are not generated for contacts for whom the placeholder parameters value is not present 
 
 - a. Use the below expression to check if the variables being sent in the webhook indeed have a value for the given contact and do not end up printing a certificate like error 1 shared above. 
-`<%=  ["@contact.name", "@contact.abcd"] |> Enum.any?(&String.starts_with?(&1, "@")) %>`
+```
+<%=  ["@contact.name", "@contact.abcd"] |> Enum.any?(&String.starts_with?(&1, "@")) %>
+```
+![File → Page Setup (15)](https://github.com/user-attachments/assets/d1b0235d-7624-4f12-97b2-df70905641ef)
+
 
 - b. For more than 2 variables, add further commas in the first list and add the variable names in double quotes. 
 - c. For just one variable, use split by custom expression and plainly enter the name of the variable and check for the condition “has only the phrase” and the variable name as shown in the screenshot. 
