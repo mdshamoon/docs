@@ -53,7 +53,7 @@ You should be able to see the whatsapp groups option in the left panel that the 
 2. 30$ per month per phone being linked to Maytapi
 
 #### Messaging 
-No separate cost for messaging needs to be paid.
+1. No separate cost for messaging needs to be paid.
 
 #### Limitations 
 1. Glific supports only 1 Maytapi linked phone number to be assocaited with the platform at present.
