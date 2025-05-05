@@ -51,10 +51,12 @@ You should be able to see the whatsapp groups option in the left panel that the 
 #### MayTapi
 1. Free trial for 3 days
 2. 30$ per month per phone being linked to Maytapi
-3. Upto 3 phones can be linked per Maytapi account 
 
 #### Messaging 
-No separate cost for messaging needs to be paid.
+1. No separate cost for messaging needs to be paid.
+
+#### Limitations 
+1. Glific supports only 1 Maytapi linked phone number to be assocaited with the platform at present.
 
 ### Video Showcase
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RdYJTBmSXYs?si=r1lCTEq2eO18ZEXo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
