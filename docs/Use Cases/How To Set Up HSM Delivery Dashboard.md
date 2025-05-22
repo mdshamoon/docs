@@ -7,7 +7,7 @@ Context: Meta recently introduced something called as Frequency capping. Explain
 
 To prevent misuse and gaming the system, they haven’t told us how many messages are allowed in how many days. You can read more about this in their own words [here.](https://www.gupshup.io/resources/blog/all-you-need-to-know-about-whatsapp-business-api-frequency-capping)
 
-### Solution: To understand contacts, templates, and campaigns (based on dates the broadcast was initaited) by having this particular information visialized on a lookerstudio dashboard. This will reduce the effort in repeteadly quering this infomration from the database for every braodcast made, and to make this information easily accessible to the program / operations team to work with.
+### Solution: To understand contacts, templates, and campaigns affected (based on dates the broadcast was initaited) by having information of errors that were encountered visialized on a lookerstudio dashboard. This will reduce the effort in repeteadly quering this infomration from the database for every braodcast made, and to make this information easily accessible to the program / operations team to work with.
 
 ```
 SELECT
@@ -24,16 +24,17 @@ m.media_url,
 m.is_hsm,
 m.contact_name,
 m.contact_phone
-FROM dataset.messages` AS m
-JOIN `dataset.contact_collection` AS cc
+FROM `project-name.bot-number.messages` AS m
+JOIN `project-name.bot-number.contact_collection` AS cc
 ON JSON_EXTRACT_SCALAR(m.errors, '$.payload.destination') = cc.phone
 WHERE m.bsp_status = "error"
 GROUP BY
-app, destination, type, reason, sent_on, flow_name, template_id, message, m.media_url, m.is_hsm, m.contact_name, m.contact_phone;”
+app, destination, type, reason, sent_on, flow_name, template_id, message, m.media_url, m.is_hsm, m.contact_name, m.contact_phone;
+
 ```
 - In the above query two tables are being merged - `contact_collection` and `messages`. 
-- For this query to work for your organization, reaplce the 'dataset' with the name of your dataset.
-- It can be found in the Big Query instance. It is typically 'ProjectName.ChatbotNumber'. 
+- For this query to work for your organization, reaplce the 'projet-name' with the name of your Google Cloud project within which the Big Qusery instance is set up.
+- Replace the 'bot-number' with the chatbot number being used, pre-fixed with the country code. 
 
 <img width="528" alt="Screenshot 2025-05-12 at 2 36 12 PM" src="https://github.com/user-attachments/assets/66b43618-f49e-4b41-a10f-d69f297fa048" />
 
@@ -42,10 +43,12 @@ app, destination, type, reason, sent_on, flow_name, template_id, message, m.medi
 
 ### 1. Sign into Bigquery using the appropriate email account and select the options to run a query.  
 - Navigate to bigquery. Expand the phone number (aka dataset) and select `Contacts` table
- <img width="304" alt="Screenshot 2025-05-12 at 2 40 53 PM" src="https://github.com/user-attachments/assets/429557a7-a146-4841-a337-266fb2c13984" />
+
+<img width="304" alt="Screenshot 2025-05-12 at 2 40 53 PM" src="https://github.com/user-attachments/assets/429557a7-a146-4841-a337-266fb2c13984" />
 
 - Click on the “Query’ button to create an empty query
-  <img width="328" alt="Screenshot 2025-05-12 at 2 41 14 PM" src="https://github.com/user-attachments/assets/09e72227-7efd-4f1a-a904-14d1c01d2b05" />
+
+<img width="328" alt="Screenshot 2025-05-12 at 2 41 14 PM" src="https://github.com/user-attachments/assets/09e72227-7efd-4f1a-a904-14d1c01d2b05" />
 
 - You will get an empty query which looks like this
 <img width="504" alt="Screenshot 2025-05-12 at 2 41 33 PM" src="https://github.com/user-attachments/assets/bfc7b172-d7c5-487b-8b1b-fa1dd8b542f9" />
@@ -84,4 +87,21 @@ lets move to Part 2
 
  <img width="997" alt="Screenshot 2025-05-12 at 3 09 46 PM" src="https://github.com/user-attachments/assets/93fe93ef-3cff-4b94-b060-10d6ccaebf11" />
 
-- To see a list of users and numbers, select Edit. Then Select Add a chart. Select a table. Drag and drop the fields contact_name and contact_phone under “Dimension”. You can now extract all the affected users when apply the relevant filters by Hovering on the top right corner of the chart, clicking on “more”, then Export and selecting the format you prefer!
+- Finish off the steps by clicking "Edit and Share"
+ 
+- This will lead you to the same preview link as shared above.
+- Navigate to the lookerstudio homepage by clicking the top left "Lookerstudio" icon, next to the "HSM and Media Errors" name of the dashboard
+<img width="1014" alt="Screenshot 2025-05-22 at 2 02 40 PM" src="https://github.com/user-attachments/assets/e95c7e2f-c9ae-4492-8e27-24674e765cb2" />
+
+- See that a new copy of the dashboard has been created.
+<img width="540" alt="Screenshot 2025-05-22 at 2 03 20 PM" src="https://github.com/user-attachments/assets/2b44cfe7-67ca-48b6-8247-3577a8a9cb5d" />
+
+- Go to this copy of the dashboard, go to edit and change the name to include your org's name for future reference.
+<img width="1398" alt="Screenshot 2025-05-22 at 2 03 48 PM" src="https://github.com/user-attachments/assets/b5a90a42-eb80-478f-9898-921a313c9372" />
+
+#### Editing and modifying further
+- To see a list of users and numbers or any other such details, select Edit. 
+- Then Select Add a chart. Select a table.
+- Drag and drop the fields contact_name and contact_phone under “Dimension”.
+- You can now extract all the affected users when apply the relevant filters by Hovering on the top right corner of the chart,
+- clicking on “more”, then Export and selecting the format you prefer!
