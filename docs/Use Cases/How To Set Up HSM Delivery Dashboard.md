@@ -18,7 +18,7 @@ JSON_EXTRACT_SCALAR(m.errors, '$.payload.type') AS type,
 JSON_EXTRACT_SCALAR(m.errors, '$.payload.payload.reason') AS reason,
 DATE(m.sent_at) AS sent_on,
 m.flow_name AS flow_name,
-m.uuid AS template_id,
+m.template_uuid AS template_id,
 m.body AS message,
 m.media_url,
 m.is_hsm,
@@ -39,7 +39,7 @@ app, destination, type, reason, sent_on, flow_name, template_id, message, m.medi
 <img width="528" alt="Screenshot 2025-05-12 at 2 36 12 PM" src="https://github.com/user-attachments/assets/66b43618-f49e-4b41-a10f-d69f297fa048" />
 
 
-## How to set this up 
+## How to set this up  
 
 ### 1. Sign into Bigquery using the appropriate email account and select the options to run a query.  
 - Navigate to bigquery. Expand the phone number (aka dataset) and select `Contacts` table
