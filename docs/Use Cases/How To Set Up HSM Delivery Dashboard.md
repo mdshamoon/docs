@@ -13,7 +13,6 @@ To prevent misuse and gaming the system, they haven’t told us how many message
 SELECT
 JSON_EXTRACT_SCALAR(m.errors, '$.app') AS app,
 JSON_EXTRACT_SCALAR(m.errors, '$.payload.destination') AS destination,
-STRING_AGG(cc.group_name, ', ') AS group_names,
 JSON_EXTRACT_SCALAR(m.errors, '$.payload.type') AS type,
 JSON_EXTRACT_SCALAR(m.errors, '$.payload.payload.reason') AS reason,
 DATE(m.sent_at) AS sent_on,
@@ -25,14 +24,11 @@ m.is_hsm,
 m.contact_name,
 m.contact_phone
 FROM `project-name.bot-number.messages` AS m
-JOIN `project-name.bot-number.contact_collection` AS cc
-ON JSON_EXTRACT_SCALAR(m.errors, '$.payload.destination') = cc.phone
 WHERE m.bsp_status = "error"
 GROUP BY
 app, destination, type, reason, sent_on, flow_name, template_id, message, m.media_url, m.is_hsm, m.contact_name, m.contact_phone;
 
 ```
-- In the above query two tables are being merged - `contact_collection` and `messages`. 
 - For this query to work for your organization, reaplce the 'projet-name' with the name of your Google Cloud project within which the Big Qusery instance is set up.
 - Replace the 'bot-number' with the chatbot number being used, pre-fixed with the country code. 
 
@@ -77,7 +73,7 @@ lets move to Part 2
 
 - Sign in to your Look Studio space using your work google account associated with BigQuery
 
-- Open this link - https://lookerstudio.google.com/u/0/reporting/bcf8f57f-fe0d-4e7a-a2d1-79858507a9d3/page/oBhGF/preview in your browser
+- Open this link - https://lookerstudio.google.com/u/0/reporting/859eb34f-2f9a-410c-8baa-dacf28af6c33/page/oBhGF/preview in your browser
 - In the top right corner, you will see 2 buttons next to your user profile icon
 <img width="739" alt="Screenshot 2025-05-12 at 3 09 14 PM" src="https://github.com/user-attachments/assets/aa6221f3-74a2-4cd5-bba2-65845b9ac64e" />
 
